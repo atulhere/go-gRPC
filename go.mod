@@ -1,4 +1,4 @@
-module go-GRPC
+module github.com/atulhere/go-gRPC
 
 go 1.21.1
 

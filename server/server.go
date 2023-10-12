@@ -6,12 +6,13 @@ import (
 	"log"
 	"net"
 
-	pb "github.com/atulhere/go-gRPC/proto"
-
+	pb "github.com/atulhere/go-gRPC/helloworld"
 	"google.golang.org/grpc"
 )
 
-type server struct{}
+type server struct {
+	pb.GreeterServer
+}
 
 func (s *server) SayHello(ctx context.Context, in *pb.HelloRequest) (*pb.HelloReply, error) {
 	return &pb.HelloReply{Message: "Hello, " + in.Name}, nil
